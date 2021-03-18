@@ -22,6 +22,8 @@ public class CsvReader {
 			String[] field = v.split(",");
 			videojuegos.add(new Videojuego(Integer.parseInt(field[0]), field[1],Integer.parseInt(field[2]),Integer.parseInt(field[3])));
 		});
+		lines.close();
+		br.close();
 		return videojuegos;		
 	}
 	
@@ -32,6 +34,8 @@ public class CsvReader {
 			String[] field = d.split(",");
 			desarrolladores.add(new Desarrollo(Integer.parseInt(field[0]), field[1]));
 		});
+		lines.close();
+		br.close();
 		return desarrolladores;		
 	}
 }
