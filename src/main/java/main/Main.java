@@ -14,11 +14,11 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		ArrayList<Videojuego> videojuegos = CsvReader.leerVideojuegos();
 		ArrayList<Desarrollo> desarrolladores = CsvReader.leerDesarrolladores();
-//		debugCsv(videojuegos,desarrolladores);
-//		HibernateUtils.hibernateQueries(videojuegos, desarrolladores);
-//		MongoUtils.insertarInfo(videojuegos, desarrolladores);
-		MongoUtils.makeQuerySelect();
-		MongoUtils.makeQueryDelete();
+		debugCsv(videojuegos,desarrolladores);
+		HibernateUtils.hibernateQueries(videojuegos, desarrolladores);
+		MongoUtils.insertarInfo(videojuegos, desarrolladores);
+		MongoUtils.hacerQuerySelect();
+		MongoUtils.hacerQueryDelete();
 	}
 
 	private static void debugCsv(ArrayList<Videojuego> videojuegos, ArrayList<Desarrollo> desarrolladores) {
@@ -30,7 +30,7 @@ public class Main {
 		});
 		desarrolladores.forEach(d->{
 			System.out.println(d.getId());
-			System.out.println(d.getName());
+			System.out.println(d.getNombre());
 		});
 	}
 

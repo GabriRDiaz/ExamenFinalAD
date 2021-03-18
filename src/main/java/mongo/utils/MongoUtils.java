@@ -41,14 +41,14 @@ public class MongoUtils {
 		desarrolladores.forEach(d->{
 			Document mongoDesarrollador = new Document();
 			mongoDesarrollador.put("id", d.getId());
-			mongoDesarrollador.put("nombre", d.getName());
+			mongoDesarrollador.put("nombre", d.getNombre());
 			docDesarrolladores.add(mongoDesarrollador);
 		});
 		
 		mongoDesarrolladores.insertMany(docDesarrolladores);
 		System.out.println("Desarrolladores insertados");
 	}
-	public static void makeQuerySelect() {
+	public static void hacerQuerySelect() {
 		MongoClient cliente = new MongoClient("localhost",27017);
 		MongoDatabase db = cliente.getDatabase("videojuegosmongo");
 		MongoCollection<Document> mongoVideojuegos = db.getCollection("videojuegos");
@@ -57,7 +57,7 @@ public class MongoUtils {
 			System.out.println(iterador.next());
 		}
 	}
-	public static void makeQueryDelete() {
+	public static void hacerQueryDelete() {
 		MongoClient cliente = new MongoClient("localhost",27017);
 		MongoDatabase db = cliente.getDatabase("videojuegosmongo");
 		MongoCollection<Document> mongoVideojuegos = db.getCollection("videojuegos");

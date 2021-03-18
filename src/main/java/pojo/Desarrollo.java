@@ -6,11 +6,11 @@ public class Desarrollo {
 	@Id
 	private int id;
 	@Column
-	private String name;
+	private String nombre;
 	
-	public Desarrollo(int id, String name) {
+	public Desarrollo(int id, String nombre) {
 		this.id = id;
-		this.name = name;
+		this.nombre = nombre;
 	}
 
 	public int getId() {
@@ -21,12 +21,12 @@ public class Desarrollo {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	
 }
