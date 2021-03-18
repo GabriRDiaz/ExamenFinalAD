@@ -20,11 +20,11 @@ public class HibernateUtils {
 		SessionFactory sf = new MetadataSources(sr).buildMetadata().buildSessionFactory();
 		Session ss = sf.openSession();
 		ss.getTransaction().begin();
-		videojuegos.forEach(v->{
-			ss.save(v);
-		});
 		desarrolladores.forEach(d->{
 			ss.save(d);
+		});
+		videojuegos.forEach(v->{
+			ss.save(v);
 		});
 		makeQuery(ss);
 		ss.getTransaction().commit();

@@ -1,4 +1,6 @@
 package pojo;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,7 +9,9 @@ public class Desarrollo {
 	private int id;
 	@Column
 	private String nombre;
-	
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name="idDes", foreignKey = @ForeignKey(name="fk_desarrollador"))
+	private List<Videojuego> videojuegos;
 	public Desarrollo(int id, String nombre) {
 		this.id = id;
 		this.nombre = nombre;
@@ -29,4 +33,7 @@ public class Desarrollo {
 		this.nombre = nombre;
 	}
 	
+	public List<Videojuego> getVideojuegos(){
+		return videojuegos;
+	}
 }
